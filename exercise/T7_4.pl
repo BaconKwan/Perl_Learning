@@ -1,0 +1,9 @@
+#! /usr/bin/perl
+use utf8;
+use strict;
+
+while(<>){
+	if(/[A-Z]([a-z])+/){
+		print;
+	}
+}
