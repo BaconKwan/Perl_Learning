@@ -1,13 +1,15 @@
-#! /usr/bin/perl -w
+#! /usr/bin/perl
 use utf8;
 use strict;
 
 my $answer = int(1+rand(100));
-while(<>){
-	last if /exit|quit|\s*\n/;
-	print "too low\n" if int($_) < $answer;
-	print "too hight\n" if int($_) > $answer;
-	if(int($_) == $answer){
+my $try;
+while ($try = <STDIN>){
+	chomp $try;
+	last if /exit|quit/;
+	print "too low\n" if int($try) < $answer;
+	print "too hight\n" if int($try) > $answer;
+	if(int($try) == $answer){
 		print "Good!\n";
 		last;
 	}
