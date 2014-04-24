@@ -5,8 +5,7 @@ use strict;
 my $answer = int(1+rand(100));
 my $try;
 while ($try = <STDIN>){
-	chomp $try;
-	last if /exit|quit/;
+	last if $try =~ /exit|quit/;
 	print "too low\n" if int($try) < $answer;
 	print "too hight\n" if int($try) > $answer;
 	if(int($try) == $answer){
